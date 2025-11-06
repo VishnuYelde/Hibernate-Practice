@@ -22,10 +22,10 @@ public class Insert{
 		EntityTransaction et = em.getTransaction(); // to handle the transaction like insert, update, delete Only DML commands
 		
 		Employee employee = new Employee();
-		employee.setEid(101);
-		employee.setEname("King");
-		employee.setEmail("king@gmail.com");
-		employee.setSal(95000);
+		employee.setEid(104);
+		employee.setEname("Tony");
+		employee.setEmail("tony@gmail.com");
+		employee.setSal(65000);
 		
 		et.begin();
 		em.persist(employee);
