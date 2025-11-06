@@ -9,10 +9,8 @@ import jakarta.persistence.Persistence;
 public class Insert{
 	
 	public static void main(String[] args) {
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("devloper"); // load driver and create connection
-		System.out.println("Looking for persistence provider...");
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("devloper");
-		System.out.println("Factory created: " + emf);
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("devloper"); // load driver and create connection
 
 		EntityManager em = emf.createEntityManager(); //provide methods to perform CURD operations
 //		methods like 
