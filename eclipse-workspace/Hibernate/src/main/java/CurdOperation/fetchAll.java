@@ -21,6 +21,17 @@ public class fetchAll{
 		Query query = em.createQuery(q1);		
 		query.setParameter(1, "80000"); // set the parameter for dynamic query of its placeholder
 		
+		// list to store the employee record
+		List<Employee> list1 = query.getResultList();
+						
+		System.out.println("=========================Employees data=========================");
+		for(Employee employee : list1){
+			System.out.println("Eid: " + employee.getEid());
+			System.out.println("Ename: " + employee.getEname());
+			System.out.println("Email: " + employee.getEmail());
+			System.out.println("Salary: " + employee.getSal());
+			System.out.println("---------------------------------------------------------------");
+		}
 		
 		// 2.Naming based parameter
 		String q2 = "select e from Employee e where e.ename=:empname and e.sal=:empsal";
@@ -38,17 +49,6 @@ public class fetchAll{
 			System.out.println("---------------------------------------------------------------");
 		}
 
-		// list to store the employee record
-		List<Employee> list1 = query.getResultList();
 		
-		
-		System.out.println("=========================Employees data=========================");
-		for(Employee employee : list1){
-			System.out.println("Eid: " + employee.getEid());
-			System.out.println("Ename: " + employee.getEname());
-			System.out.println("Email: " + employee.getEmail());
-			System.out.println("Salary: " + employee.getSal());
-			System.out.println("---------------------------------------------------------------");
-		}
 	}
 }
