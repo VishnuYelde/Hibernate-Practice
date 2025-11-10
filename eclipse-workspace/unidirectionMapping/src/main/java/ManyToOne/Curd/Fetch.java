@@ -16,7 +16,9 @@ public class Fetch {
 		
 		Review review = em.find(Review.class, 1);
 		
+		
 		if (review != null) {			
+			
 			Product product = review.getProduct();
 			System.out.println("==================Product Data==================");
 			System.out.println("Product ID: "+product.getPid());
@@ -26,6 +28,8 @@ public class Fetch {
 			System.out.println("==================Review Data===================");
 			System.out.println("Review ID: "+review.getRid());
 			System.out.println("Message: "+review.getMessage());
+			
+			
 		} else {
 			System.out.println("Data Not Found");
 		}
