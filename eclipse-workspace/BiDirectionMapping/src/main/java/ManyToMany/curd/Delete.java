@@ -1,7 +1,5 @@
 package ManyToMany.curd;
 
-import java.util.List;
-
 import ManyToMany.entity.Doctor;
 import ManyToMany.entity.Patient;
 import jakarta.persistence.EntityManager;
