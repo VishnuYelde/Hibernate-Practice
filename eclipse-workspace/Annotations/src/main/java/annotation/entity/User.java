@@ -16,22 +16,27 @@ import jakarta.persistence.Table;
 @Table(name = "user_info")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int uid;
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	// GenerationType IDENTITY --> uses primary key column, if table deleted then IDENTITY sequence also deleted.
+	// SEQUENCE --> uses hibernate SEQUENCE & create SEQUENCE, if table remove hibernate SEQUENCE will not deleted.
+	// TABLE --> uses Relational Table, here also SEQUENCE will not be deleted, If we delete the Entity table.
+	// AUTO --> uses any one(1) from above 3. based on Database. Prefers: 1.SEQUENCE 2.IDENTITY 3.TABLE
 	
+	private int uid;
+
 	@Column(name = "username")
 	private String name;
-	
+
 	@Column(unique = true, updatable = true, nullable = false)
 	private String email;
-	
+
 	@Column(updatable = false)
 	private long phone;
-	
+
 	@CreationTimestamp
 	@Column(updatable = false)
 	private LocalDateTime createdDateTime;
-	
+
 	@UpdateTimestamp
 	private LocalDateTime updatedDateTime;
 
@@ -82,5 +87,5 @@ public class User {
 	public void setUpdatedDateTime(LocalDateTime updatedDateTime) {
 		this.updatedDateTime = updatedDateTime;
 	}
-	
+
 }
